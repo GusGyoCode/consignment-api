@@ -27,6 +27,9 @@ app.use((req, res, next) => {
 
 // Añadir prefijos de rutas / cargar rutas
 app.use('/api', article_routes);
+app.get('/', (req, res) => {
+	res.send('welcome to my API!')
+})
 
 // Exportar modulos (fichero actual)
 module.exports = app;
