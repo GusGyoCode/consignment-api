@@ -1,6 +1,5 @@
 'use strict'
-var env = require('node-env-file');
-env(__dirname + '/.env');
+require('dotenv').config({path: '.env'})
 
 var mongoose = require('mongoose');
 var app = require('./app');
