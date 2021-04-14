@@ -1,8 +1,9 @@
 'use strict'
-require('dotenv').config({path: '.env'})
-
 var mongoose = require('mongoose');
 var app = require('./app');
+
+require('dotenv').config({path: 'variables.env'})
+
 var port = process.env.PORT || 3900;
 var url = process.env.URL
 var host = process.env.HOST || '0.0.0.0';
@@ -15,6 +16,6 @@ mongoose.connect(url, { useNewUrlParser: true })
 
           //crear servidor y ponerme a escuchar peticiones HTTP
           app.listen(port, host, () => {
-            console.log('servidor corriendo en '+host+port);
+            console.log('servidor corriendo');
           });
         })
